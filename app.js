@@ -53,7 +53,7 @@ app.post('/sendMail', function(req,res){
 	    res.send(400);
 	  }
 	  else {
-	    res.redirect("index.html");
+	    res.send(200);
 	  }
 	});
 
