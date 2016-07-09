@@ -23,6 +23,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.get('/',function(req,res){
+	res.send('heyho');
+});
 app.post('/sendMail', function(req,res){
 	var email = req.body.email;
 	console.log(email);
