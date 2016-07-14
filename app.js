@@ -59,6 +59,39 @@ app.post('/sendMail', function(req,res){
 
 });
 
+app.post('/sendMailToChrissy', function(req,res){
+	var email = req.body.email;
+	console.log(email);
+	var name = req.body.name;
+	var subject = req.body.subject;
+	var body = req.body.body;
+
+  	var auth = {
+	  auth: {
+	    api_key: 'key-5b1126290989e120ab44ce2dfba7a1a2',
+	    domain: 'sandbox3040a36c46a447d7a5a7fc808b46256f.mailgun.org'
+	  }
+	}
+
+	var nodemailerMailgun = nodemailer.createTransport(mg(auth));
+
+	nodemailerMailgun.sendMail({
+	  from: name +" <"+email+">",
+	  to: "coccorso@gmail.com", // An array if you have multiple recipients.
+	  subject: subject,
+	  text: body,
+	}, function (err, info) {
+	  if (err) {
+	  	console.log(err);
+	    res.send(400);
+	  }
+	  else {
+	    res.send(200);
+	  }
+	});
+
+});
+
 app.set('port', (process.env.PORT || 8888));
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
