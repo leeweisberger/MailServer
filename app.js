@@ -110,7 +110,7 @@ app.post('/sendMailToRabbi', function(req,res){
 
 	nodemailerMailgun.sendMail({
 	  from: name +" <"+email+">",
-	  to: "rabbimeekatbt@optonline.net", // An array if you have multiple recipients.
+	  to: "lweisberger5@gmail.com", // An array if you have multiple recipients.
 	  subject: subject,
 	  text: body,
 	}, function (err, info) {
