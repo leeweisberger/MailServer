@@ -143,7 +143,7 @@ app.post('/sendMailToWcmo', function(req,res){
 
 	nodemailerMailgun.sendMail({
 	  from: name +" <"+email+">",
-	  to: "lweisberger5@gmail.com", // An array if you have multiple recipients.
+	  to: "wcmo@wcmolaw.com", // An array if you have multiple recipients.
 	  subject: subject,
 	  text: body,
 	}, function (err, info) {
